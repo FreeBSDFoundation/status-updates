@@ -31,10 +31,9 @@ I'll take task 1 and 3, since task 2 needs more investigation on LLDB source cod
 
 This is simply a wrapper script that can trigger lldb for kernel debuggin like we trigger kgdb. There are two options that won't be included in `kdb(1)`.
 
+- `-q`: lldb doesn't print copyright banner. Printing crash info is prevented through batch mode (`-b` or `--batch`)
 - `-w`: not sure, but doesn't `memory write` already handle this? (or should I add a new method to `ProcessFreeBSDKernel.cpp`?)
 - `-a`: mostly used for emacs, llvm doesn't have this.
-
-`-q` or `--quiet` supresses startup banner in kgdb, but it stops echoing command in lldb.
 
 The script is ready as of Jan 24 but I need a few days to test this.
 
