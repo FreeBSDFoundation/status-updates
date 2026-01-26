@@ -32,7 +32,6 @@ I'll take task 1 and 3, since task 2 needs more investigation on LLDB source cod
 This is simply a wrapper script that can trigger lldb for kernel debuggin like we trigger kgdb. There are two options that won't be included in `kdb(1)`.
 
 - `-q`: lldb doesn't print copyright banner. Printing crash info is prevented through batch mode (`-b` or `--batch`)
-- `-w`: not sure, but doesn't `memory write` already handle this? (or should I add a new method to `ProcessFreeBSDKernel.cpp`?)
 - `-a`: mostly used for emacs, llvm doesn't have this.
 
 The script is ready as of Jan 24 but I need a few days to test this.
@@ -44,6 +43,10 @@ I hope this can be achieved within `ProcessFreeBSDKernel.cpp`.
 ### Register Context
 
 I only see `RegisterContextFreeBSDKernel*` only for x86_64, i386, and arm64. What is blocking adding support for powerpc*, riscv, and armv7?
+
+### Enable writing to `/dev/mem`
+
+Equivalent to `-w` in kgdb(1) but it hasn't been implemented yet. I'll implement this on lldb side (`DoWriteMemory`)
 
 ## Integration lldb into crashinfo
 ### Add python script for lldb
