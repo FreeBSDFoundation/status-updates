@@ -44,6 +44,8 @@ I hope this can be achieved within `ProcessFreeBSDKernel.cpp`.
 
 ## Show stack frame where execution stopped
 
+## Order thread by pid then tid (PR Submitted on LLVM)
+
 ### Register Context
 
 `RegisterContextFreeBSDKernel*` add support for arm, riscv64, powerpc, and ppc64le.
