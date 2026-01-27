@@ -27,7 +27,7 @@ FreeBSD provides a script, /usr/sbin/crashinfo, which runs after a system (kerne
 I'll take task 1 and 3, since task 2 needs more investigation on LLDB source code.
 
 ## Better kernel crash dump information
-### Create `kdb(1)` script (`kgdb(1)` equivalent)
+### Create `kdb(1)` script (`kgdb(1)` equivalent) (Under review)
 
 This is simply a wrapper script that can trigger lldb for kernel debuggin like we trigger kgdb. There are two options that won't be included in `kdb(1)`.
 
@@ -36,9 +36,13 @@ This is simply a wrapper script that can trigger lldb for kernel debuggin like w
 
 The script is ready as of Jan 24 but I need a few days to test this.
 
-### Automatically select thread and print kenrel message buffer
+### Automatically select thread and print kenrel message buffer (PR Submitted on LLVM)
 
 I hope this can be achieved within `ProcessFreeBSDKernel.cpp`.
+
+## Print loaded debugging symbols from kenrel modules
+
+## Show stack frame where execution stopped
 
 ### Register Context
 
