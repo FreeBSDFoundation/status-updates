@@ -42,7 +42,7 @@ I hope this can be achieved within `ProcessFreeBSDKernel.cpp`.
 
 ### Register Context
 
-I only see `RegisterContextFreeBSDKernel*` only for x86_64, i386, and arm64. What is blocking adding support for powerpc*, riscv, and armv7?
+`RegisterContextFreeBSDKernel*` add support for arm, riscv64, powerpc, and ppc64le.
 
 ### Enable writing to `/dev/mem`
 
