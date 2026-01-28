@@ -36,15 +36,25 @@ This is simply a wrapper script that can trigger lldb for kernel debuggin like w
 
 The script is ready as of Jan 24 but I need a few days to test this.
 
-### Automatically select thread and print kenrel message buffer (PR Submitted on LLVM)
+### Print kenrel message buffer (PR Submitted on LLVM)
 
-I hope this can be achieved within `ProcessFreeBSDKernel.cpp`.
+Read and print `struct msgbuf *msgbufp`.
 
-## Print loaded debugging symbols from kenrel modules
+### Automatically select crasehd thread (PR Submitted on LLVM)
 
-## Show stack frame where execution stopped
+We should tell lldb which thread was stopped one. This will be treated as an exception `kernel panic`.
 
-## Order thread by pid then tid (PR Submitted on LLVM)
+### Order thread list incrementally by pid (PR Submitted on LLVM)
+
+Since `allproc` is ordered reversely, we need to reverse the order then print thread list.
+
+### Print loaded debugging symbols from kenrel modules
+
+Currently doesn't happen in lldb.
+
+### Show stack frame where execution stopped
+
+Currently doesn't happen in lldb.
 
 ### Register Context
 
