@@ -69,6 +69,13 @@ Currently doesn't happen in lldb.
 
 Equivalent to `-w` in kgdb(1) but it hasn't been implemented yet. I'll implement this on lldb side (`DoWriteMemory`)
 
+### Update test suite
+
+Moritz System's libfbsdcore and test-vmcores repositories are inactive for years and their website is inaccessible.
+Currently I submitted PR for disable testing on upstream lldb.
+Those two repositories will be migrated to the FreeBSD GitHub organization and have more improvements there.
+Once everything is done, I'll create complete test suite and submit it to upstream lldb.
+
 ## Integration lldb into crashinfo
 ### Add python script for lldb
 
