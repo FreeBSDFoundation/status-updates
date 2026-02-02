@@ -48,9 +48,10 @@ We should tell lldb which thread was stopped one. This will be treated as an exc
 
 Since `allproc` is ordered reversely, we need to reverse the order then print thread list.
 
-## Add RegisterContext for Process/FreeBSD
+### Add RegisterContext for Process/FreeBSD
 
-* PowerPC64BE support is incomplete.
+* Add ppc64 support.
+* Add ppc64le suppport.
 * Add riscv64 support.
 
 ### Print loaded debugging symbols from kenrel modules
@@ -63,7 +64,12 @@ Currently doesn't happen in lldb.
 
 ### Add RegisterContext for Process/FreeBSDKernel
 
-`RegisterContextFreeBSDKernel*` add support for arm, riscv64, powerpc, and ppc64le.
+* Add armv7 support.
+* Add ppc support.
+* Add ppc64 support.
+* Add ppc64le suppport.
+* Add riscv64 support.
+* Add mips64 support.
 
 ### Enable writing to `/dev/mem`
 
