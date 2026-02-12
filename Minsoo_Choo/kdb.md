@@ -38,7 +38,7 @@ The script is ready as of Jan 24 but I need a few days to test this.
 
 ### LLDB improvements
 
-Tracked at [LLDB FreeBSD meta issue]https://github.com/llvm/llvm-project/issues/180061).
+Tracked at [LLDB FreeBSD meta issue](https://github.com/llvm/llvm-project/issues/180061).
 
 ## Integration lldb into crashinfo
 ### Add python script for lldb
