@@ -31,56 +31,14 @@ I'll take task 1 and 3, since task 2 needs more investigation on LLDB source cod
 
 This is simply a wrapper script that can trigger lldb for kernel debuggin like we trigger kgdb. There are two options that won't be included in `kdb(1)`.
 
-- `-q`: lldb doesn't print copyright banner. Printing crash info is prevented through batch mode (`-b` or `--batch`)
+- `-q`: lldb doesn't print copyright banner. Printing crash info is prevented through different option
 - `-a`: mostly used for emacs, llvm doesn't have this.
 
 The script is ready as of Jan 24 but I need a few days to test this.
 
-### Print kenrel message buffer (PR Submitted on LLVM)
+### LLDB improvements
 
-Read and print `struct msgbuf *msgbufp`.
-
-### Automatically select crasehd thread (PR Submitted on LLVM)
-
-We should tell lldb which thread was stopped one. This will be treated as an exception `kernel panic`.
-
-### Order thread list incrementally by pid (PR Submitted on LLVM)
-
-Since `allproc` is ordered reversely, we need to reverse the order then print thread list.
-
-### Add RegisterContext for Process/FreeBSD
-
-* Add ppc64 support.
-* Add ppc64le suppport.
-* Add riscv64 support.
-
-### Print loaded debugging symbols from kenrel modules
-
-Currently doesn't happen in lldb.
-
-### Show stack frame where execution stopped
-
-Currently doesn't happen in lldb.
-
-### Add RegisterContext for Process/FreeBSDKernel
-
-* Add armv7 support.
-* Add ppc support.
-* Add ppc64 support.
-* Add ppc64le suppport.
-* Add riscv64 support.
-* Add mips64 support.
-
-### Enable writing to `/dev/mem`
-
-Equivalent to `-w` in kgdb(1) but it hasn't been implemented yet. I'll implement this on lldb side (`DoWriteMemory`)
-
-### Update test suite
-
-Moritz System's libfbsdcore and test-vmcores repositories are inactive for years and their website is inaccessible.
-Currently I submitted PR for disable testing on upstream lldb.
-Those two repositories will be migrated to the FreeBSD GitHub organization and have more improvements there.
-Once everything is done, I'll create complete test suite and submit it to upstream lldb.
+Tracked at [LLDB FreeBSD meta issue]https://github.com/llvm/llvm-project/issues/180061).
 
 ## Integration lldb into crashinfo
 ### Add python script for lldb
