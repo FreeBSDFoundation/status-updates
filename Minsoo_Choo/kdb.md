@@ -27,14 +27,14 @@ FreeBSD provides a script, /usr/sbin/crashinfo, which runs after a system (kerne
 I'll take task 1 and 3, since task 2 needs more investigation on LLDB source code.
 
 ## Better kernel crash dump information
-### Create `kdb(1)` script (`kgdb(1)` equivalent) (Under review)
+### Create `kdb(1)` script (`kgdb(1)` equivalent) (Abandoned)
+
+**This revision has been abandoned. See [D54895](https://reviews.freebsd.org/D54895) for more information.**
 
 This is simply a wrapper script that can trigger lldb for kernel debuggin like we trigger kgdb. There are two options that won't be included in `kdb(1)`.
 
 - `-q`: lldb doesn't print copyright banner. Printing crash info is prevented through different option
 - `-a`: mostly used for emacs, llvm doesn't have this.
-
-The script is ready as of Jan 24 but I need a few days to test this.
 
 ### LLDB improvements
 
